@@ -29,20 +29,5 @@ namespace MovieApp.Models
         [ForeignKey("ProducerId")]
         public Producer Producer { get; set; }
 
-        public Movie(int id, string name, string description, double price, string imageURL, DateTime startDate, DateTime endDate, MovieCategory movieCategory, int cinemaId, Cinema cinema, int producerId, Producer producer)
-        {
-            Id = id;
-            Name = name;
-            Description = description;
-            Price = price;
-            ImageURL = imageURL;
-            StartDate = startDate;
-            EndDate = endDate;
-            MovieCategory = movieCategory;
-            CinemaId = cinemaId;
-            Cinema = cinema;
-            ProducerId = producerId;
-            Producer = producer;
-        }
     }
 }

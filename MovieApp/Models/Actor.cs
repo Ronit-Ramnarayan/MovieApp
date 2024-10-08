@@ -12,13 +12,5 @@ namespace MovieApp.Models
 
         //Relationships
         public List<Actor_Movie> Actor_Movies { get; set; }
-
-        public Actor(int id, string profilePic, string fullName, string bio)
-        {
-            Id = id;
-            ProfilePictureURL = profilePic;
-            FullName = fullName;
-            Bio = bio;
-        }
     }
 }
