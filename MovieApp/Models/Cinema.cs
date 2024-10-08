@@ -10,6 +10,8 @@ namespace MovieApp.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
+        //Relationships
+        public List<Movie> Movies { get; set; }
         public Cinema(int id, string logo, string name, string description)
         {
             Id = id;

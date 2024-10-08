@@ -10,6 +10,9 @@ namespace MovieApp.Models
         public string FullName { get; set; }
         public string Bio { get; set; }
 
+        //Relationships
+        public List<Movie> Movies { get; set; }
+
         public Producer(int id, string profilePic, string fullName, string bio)
         {
             Id = id;

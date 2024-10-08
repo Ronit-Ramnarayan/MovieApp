@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using MovieApp.Data.Enum;
 
 namespace MovieApp.Models
@@ -15,7 +16,20 @@ namespace MovieApp.Models
         public DateTime EndDate { get; set; }
         public MovieCategory MovieCategory { get; set; }
 
-        public Movie(int id, string name, string description, double price, string imageURL, DateTime startDate, DateTime endDate, MovieCategory movieCategory)
+        //Relationships
+        public List<Actor_Movie> Actor_Movies { get; set; }
+
+        //Cinema
+        public int CinemaId { get; set; }
+        [ForeignKey("CinemaId")]
+        public Cinema Cinema { get; set; }
+
+        //Producer
+        public int ProducerId { get; set; }
+        [ForeignKey("ProducerId")]
+        public Producer Producer { get; set; }
+
+        public Movie(int id, string name, string description, double price, string imageURL, DateTime startDate, DateTime endDate, MovieCategory movieCategory, int cinemaId, Cinema cinema, int producerId, Producer producer)
         {
             Id = id;
             Name = name;
@@ -25,6 +39,10 @@ namespace MovieApp.Models
             StartDate = startDate;
             EndDate = endDate;
             MovieCategory = movieCategory;
+            CinemaId = cinemaId;
+            Cinema = cinema;
+            ProducerId = producerId;
+            Producer = producer;
         }
     }
 }
