@@ -3,17 +3,18 @@ using MovieApp.Data;
 
 namespace MovieApp.Controllers
 {
-    public class ActorsController : Controller
+    public class CinemasController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ActorsController(AppDbContext context)
+        public CinemasController(AppDbContext context)
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
-            var allActors = _context.Actors.ToList();
+            var allCinemas = _context.Cinemas.ToList();
             return View();
         }
     }

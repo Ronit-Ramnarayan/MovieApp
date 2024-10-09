@@ -13,7 +13,7 @@ namespace MovieApp.Controllers
         }
         public IActionResult Index()
         {
-            var data = _context.Producers.ToList();
+            var allProducers = _context.Producers.ToList();
             return View();
         }
     }
